@@ -1,0 +1,50 @@
+name: Release and Publish to NPM
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: ['18']
+
+    steps:
+      - name: Checkout ${{ github.ref_name }}
+        uses: actions/checkout@v2
+        with:
+          ref: ${{ github.ref }}
+
+      - name: Use NodeJS ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+          registry-url: 'https://registry.npmjs.org'
+
+      - name: Install PNPM
+        run: corepack enable && pnpm install --frozen-lockfile
+
+      - name: Install dependencies
+        run: pnpm install
+
+      - name: Check git status
+        run: git status
+
+      - name: Build and release tag
+        run: pnpm release
+        env:
+          GIT_AUTHOR_NAME: 'abdallamohammed'
+          GIT_AUTHOR_EMAIL: 'abdallah.r660@gmail.com'
+          GIT_COMMITTER_NAME: 'abdallamohammed'
+          GIT_COMMITTER_EMAIL: 'abdallah.r660@gmail.com'
+
+      - name: Publish to NPM
+        run: |
+          echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
+          pnpm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
