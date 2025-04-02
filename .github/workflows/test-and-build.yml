@@ -30,7 +30,6 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
-          version: latest
           run_install: false
 
       - name: Install dependencies
@@ -73,7 +72,6 @@ jobs:
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
-          version: latest
           run_install: false
 
       - name: Install dependencies
