@@ -17,15 +17,14 @@ jobs:
 
     steps:
       - name: Checkout ${{ github.ref_name }}
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           ref: ${{ github.ref }}
 
       - name: Use NodeJS ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
+        uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-          registry-url: 'https://registery.npmjs.org'
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
@@ -66,7 +65,7 @@ jobs:
           distribution: 'adopt'
 
       - name: Validate Graddle
-        uses: gradle/wrapper-validation-action@v1.0.4
+        uses: gradle/actions/wrapper-validation@v3
 
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
