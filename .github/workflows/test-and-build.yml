@@ -76,4 +76,5 @@ jobs:
         uses: gradle/actions/wrapper-validation@v4
 
       - name: Build with Gradle
-        run: ./android/gradlew build
+        working-directory: ./android
+        run: ./gradlew build
