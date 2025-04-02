@@ -7,17 +7,17 @@ A React Native module for detecting wired headphone (audio jack) connection stat
 Install the package using NPM, YARN or PNPM:
 
 ```bash
-npm install react-native-jack-headphone-detector
+npm install @nabbra/rn-jack-headphone-detector
 # or
-yarn add react-native-jack-headphone-detector
+yarn add @nabbra/rn-jack-headphone-detector
 # or
-pnpm add react-native-jack-headphone-detector
+pnpm add @nabbra/rn-jack-headphone-detector
 ```
 
 Ensure that your React Native project is correctly linked the module.
 
 ```bash
-npx react-native link react-native-jack-headphone-detector
+npx react-native link @nabbra/rn-jack-headphone-detector
 ```
 
 ## Usage
@@ -27,7 +27,7 @@ npx react-native link react-native-jack-headphone-detector
 You can check whether a wired headset is currently connected using:
 
 ```javascript
-import JackHeadphoneDetector from 'react-native-jack-headphone-detector';
+import JackHeadphoneDetector from '@nabbra/rn-jack-headphone-detector';
 
 JackHeadphoneDetector.isJackHeadphoneConnected()
   .then(isConnected => {
@@ -40,7 +40,7 @@ JackHeadphoneDetector.isJackHeadphoneConnected()
 You can subscribe to headphone connection state changes using event listeners:
 
 ```javascript
-import { useJackHeadphoneDetector } from 'react-native-jack-headphone-detector';
+import { useJackHeadphoneDetector } from '@nabbra/rn-jack-headphone-detector';
 
 const isConnected = useJackHeadphoneDetector();
 ```
@@ -50,7 +50,7 @@ const isConnected = useJackHeadphoneDetector();
 You can use the provided React components to conditionally render UI elements based on headphone connection status:
 
 ```javascript
-import { JackHeadphoneState } from 'ract-native-jack-headphone-detector';
+import { JackHeadphoneState } from '@nabbra/rn-jack-headphone-detector';
 import { Text, View } from 'react-native';
 
 const MyComponent = () => {
