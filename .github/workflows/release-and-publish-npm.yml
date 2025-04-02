@@ -35,14 +35,6 @@ jobs:
       - name: Check git status
         run: git status
 
-      - name: Build and release tag
-        run: pnpm release
-        env:
-          GIT_AUTHOR_NAME: 'abdallamohammed'
-          GIT_AUTHOR_EMAIL: 'abdallah.r660@gmail.com'
-          GIT_COMMITTER_NAME: 'abdallamohammed'
-          GIT_COMMITTER_EMAIL: 'abdallah.r660@gmail.com'
-
       - name: Publish to NPM
         run: |
           echo "//registry.npmjs.org/:_authToken=${{ secrets.NPM_TOKEN }}" > ~/.npmrc
