@@ -24,7 +24,7 @@
     "prepare": "husky",
     "test": "jest",
     "preversion": "pnpm build",
-    "release": "pnpm version prelease",
+    "release": "pnpm version prerelease --preid=rc",
     "postversion": "git push && git push --tags",
     "publish-npm": "pnpm publish",
     "prettier:write": "prettier --write -c '**/*.{ts,tsx}'",
