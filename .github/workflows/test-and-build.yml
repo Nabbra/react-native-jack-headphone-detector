@@ -64,9 +64,6 @@ jobs:
           java-version: '8'
           distribution: 'adopt'
 
-      - name: Validate Graddle
-        uses: gradle/actions/wrapper-validation@v3
-
       - name: Setup PNPM
         uses: pnpm/action-setup@v4
         with:
@@ -75,7 +72,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
 
+      - name: Validate Graddle
+        uses: gradle/actions/wrapper-validation@v4
+
       - name: Build with Gradle
-        run: |
-          chmod +x gradlew
-          ./gradlew build
+        run: ./android/gradlew build
