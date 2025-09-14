@@ -36,8 +36,9 @@
   "files": [
     "build",
     "android",
+    "ios",
     "react-native.config.js",
-    "react-native-jack-headphone-detector.podspec"
+    "rn-jack-headphone-detector.podspec"
   ],
   "devDependencies": {
     "@react-native/typescript-config": "^0.74.0",
