@@ -12,7 +12,7 @@
 #import "React/RCTEventDispatcher.h"
 #endif
 
-@implementation RNJackHeadphoneDetectorModule {
+@implementation RNJackHeadphoneDetector {
   BOOL hasListeners;
 }
 
