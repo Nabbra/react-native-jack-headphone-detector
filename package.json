@@ -1,6 +1,6 @@
 {
   "name": "@nabbra/rn-jack-headphone-detector",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "React Native audio jack heaphone detector.",
   "keywords": [
     "react-native",
