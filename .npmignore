@@ -35,3 +35,8 @@ android/.project
 BluetoothClassicExample/ios/protocol-strings.plist
 
 .DS_Store
+
+android/.gradle
+android/.idea
+android/build
+android/local.properties

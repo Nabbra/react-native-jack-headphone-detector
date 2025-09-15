@@ -1,6 +1,6 @@
 {
   "name": "@nabbra/rn-jack-headphone-detector",
-  "version": "0.3.0",
+  "version": "0.3.2",
   "description": "React Native audio jack heaphone detector.",
   "keywords": [
     "react-native",
@@ -38,7 +38,11 @@
     "android",
     "ios",
     "react-native.config.js",
-    "rn-jack-headphone-detector.podspec"
+    "rn-jack-headphone-detector.podspec",
+    "!android/build",
+    "!android/.gradle",
+    "!android/local.properties",
+    "!android/.idea"
   ],
   "devDependencies": {
     "@commitlint/cli": "^19.8.1",
