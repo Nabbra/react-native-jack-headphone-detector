@@ -1,11 +1,9 @@
 !build/
 node_modules/
 npm-debug.log
-yarn-error.log
 .jest/
 *.tgz
 
-build/
 *.pbxuser
 !default.pbxuser
 *.mode1v3
@@ -23,7 +21,6 @@ DerivedData
 *.xcuserstate
 project.xcworkspace
 
-build/
 .idea
 .gradle
 local.properties
